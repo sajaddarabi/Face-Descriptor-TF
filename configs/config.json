@@ -1,11 +1,11 @@
 {
   "exp_name": "test1",
   "num_epochs": 1,
-  "num_iter_per_epoch": 10,
+  "num_iter_per_epoch": 256,
   "learning_rate": 0.001,
   "batch_size": 16,
   "optimizer": "Adam",
-  "gender_data_path": "/home/sajad/Downloads/faces",
-  "path_mat_file": "/home/sajad/Desktop/challenge/Face-Descriptor-TF/delete/vgg_face.mat",
+  "gender_data_path": "/home/sd/Adience/faces",
+  "path_mat_file": "/home/sd/Downloads/vgg_face_matconvnet/data/vgg_face.mat",
   "max_to_keep":5
 }

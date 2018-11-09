@@ -49,5 +49,7 @@ def main():
     model.load(sess)
     # train
     trainer.train()
+
+    # test_data = data.g
 if __name__ == '__main__':
     main()

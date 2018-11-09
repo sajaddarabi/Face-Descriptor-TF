@@ -11,7 +11,6 @@ class GenderTrainer(BaseTrain):
         loop = tqdm(range(self.config.num_iter_per_epoch))
         losses = []
         accs = []
-        import pdb; pdb.set_trace()
         for _ in loop:
             loss, acc = self.train_step()
             losses.append(loss)
@@ -24,12 +23,13 @@ class GenderTrainer(BaseTrain):
             'loss': loss,
             'acc': acc,
         }
+        print("""Epoch-{}  loss:{:.4f} -- acc:{:.4f}
+                """.format(epoch, train_loss, train_acc,))
         self.logger.summarize(cur_it, summaries_dict=summaries_dict)
         self.model.save(self.sess)
 
     def train_step(self):
         batch_x, batch_y = next(self.data.next_batch(self.config.batch_size))
-        import pdb; pdb.set_trace()
         feed_dict = {self.model.VGG_face_model.x: batch_x, self.model.y: batch_y, self.model.is_training: True}
         _, loss, acc = self.sess.run([self.model.train_step, self.model.cross_entropy, self.model.accuracy],
                                      feed_dict=feed_dict)

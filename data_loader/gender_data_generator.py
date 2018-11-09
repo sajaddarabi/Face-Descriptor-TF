@@ -71,7 +71,6 @@ class GenderDataGenerator:
         x = self.train_input[idx]
         y = self.train_y[idx].astype(int)
         y = np.eye(2)[y]
-        import pdb; pdb.set_trace()
         batch_x = []
         batch_y = []
         for i in range(len(x)):

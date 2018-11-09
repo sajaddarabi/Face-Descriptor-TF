@@ -25,7 +25,7 @@ class VGG_Face_Transfer(BaseModel):
         self.y = tf.placeholder(tf.float32, [None, self.num_classes])
 
         descriptors = self.VGG_face_model.layers[-3]
-        logits = tf.layers.dense(descriptors, units=self.num_classes, name="dense134")
+        logits = tf.squeeze(tf.layers.dense(descriptors, units=self.num_classes, name="dense134"))
 
         with tf.name_scope("loss"):
             self.cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(labels=self.y, logits=logits))

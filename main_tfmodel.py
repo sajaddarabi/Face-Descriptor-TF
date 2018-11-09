@@ -51,6 +51,5 @@ def main():
     pred = sess.run([model.out], feed_dict={model.x: img[np.newaxis, :, :, :]})
     top1_class = np.argmax(pred[0])
     print("pred: {}".format(class_names[top1_class]))
-    import pdb; pdb.set_trace()
 if __name__ == '__main__':
     main()

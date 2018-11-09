@@ -50,6 +50,15 @@ def main():
     # train
     trainer.train()
 
-    # test_data = data.g
+    test_x, test_y = data.get_test()
+    count = 0.0
+    corr = 0.0
+    for ti, ty in squeeze(test_x, test_y):
+        logit, = sess.run(model.logits, feed_dict={model.VGG_face_model.x: ti})
+        k = np.argmax(logit)
+        count += 1
+        if (k == int(ty)):
+            corr += 1
+    print("test accuracy: {}".format(corr / count))
 if __name__ == '__main__':
     main()

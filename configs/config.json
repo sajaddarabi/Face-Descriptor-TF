@@ -1,7 +1,7 @@
 {
   "exp_name": "test1",
   "num_epochs": 1,
-  "num_iter_per_epoch": 256,
+  "num_iter_per_epoch": 10,
   "learning_rate": 0.001,
   "batch_size": 16,
   "optimizer": "Adam",

@@ -23,8 +23,9 @@ class GenderTrainer(BaseTrain):
             'loss': loss,
             'acc': acc,
         }
+        epoch = self.model.cur_epoch_tensor.eval(self.sess)
         print("""Epoch-{}  loss:{:.4f} -- acc:{:.4f}
-                """.format(epoch, train_loss, train_acc,))
+                """.format(epoch, loss, acc,))
         self.logger.summarize(cur_it, summaries_dict=summaries_dict)
         self.model.save(self.sess)
 

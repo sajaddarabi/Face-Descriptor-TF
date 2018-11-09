@@ -17,6 +17,7 @@ class GenderDataGenerator:
             self.data += self.load_data(os.path.join(self.data_path, fd))
 
         self.data = np.asarray(self.data)
+        np.random.shuffle(self.data)
 
         train_test_ratio = 0.8
         num_examples = len(self.data)
@@ -54,8 +55,11 @@ class GenderDataGenerator:
                             data.append([ff, int(t[2] == 'f')])
         return data
 
-    def get_test(self, batch_size):
-        return self.test_input, self.test_y
+    def get_test(self):
+        test_x = []
+        for i in range(len(self.test_input)):
+            test_x.append(self.proc_image(self.test_input[i]))
+        return self.test_x, self.test_y
 
     def proc_image(self, img):
         data = tf.placeholder(tf.string)

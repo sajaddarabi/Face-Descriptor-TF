@@ -28,5 +28,5 @@ The project contains the following structure:
 - Model directory contains the tensorflow model for VGG descriptor, as well as a model that uses this as a feature extractor to do gender classification.
 - Trainer contains the training logic
 - data_loader contains data pipeline
-- data folder to store data (not necessary)
+- Data folder to store data (not necessary)
 - Utils are anything additional that doesn't fit in the other folders.

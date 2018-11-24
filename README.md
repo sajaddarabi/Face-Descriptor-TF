@@ -3,6 +3,7 @@
 To run the codes, first `pip install -r requirements.txt`. Preferably in a virtual environment.
 
 Then, download the vgg_face_matconvnet.tar.gz file from [here](http://www.robots.ox.ac.uk/~vgg/software/vgg_face/). Download the [face_gender dataset](https://talhassner.github.io/home/projects/Adience/Adience-data.html#agegender). Once the dataset is extracted, the faces folder should also contain the following 5 .txt files
+
     - fold_0_data.txt
     - fold_1_data.txt
     - fold_2_data.txt
@@ -21,21 +22,8 @@ To run the classifier model run the following command (make sure you're in the d
 
 The project contains the following structure:
 
-├── base
-├── configs
-├── data
-├── data_loader
-├── figures
-├── main_gender.py
-├── main_tfmodel.py
-├── models
-├── README.md
-├── requirements.txt
-├── trainers
-└── utils
 
-
-- Model directory contains the tensorflow model for VGG descriptor, as well as the transfer a model that uses this as a feature extractor to do gender classification.
+- Model directory contains the tensorflow model for VGG descriptor, as well as a model that uses this as a feature extractor to do gender classification.
 - Trainer contains the training logic
 - data_loader contains data pipeline
 - data folder to store data (not necessary)

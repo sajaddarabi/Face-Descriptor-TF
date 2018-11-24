@@ -11,8 +11,10 @@ Then, download the vgg_face_matconvnet.tar.gz file from [here](http://www.robots
     - fold_4_data.txt
 
 Add the paths to the config/config.json directory,
+
     - "gender_data_path": <path to gender dataset downloaded earlier>
     - "path_mat_file": <path to vgg descriptor model stored in vgg_face_matconvnet.tar.gz>
+
 Other parameters can be changed here accordingly.
 
 To run the classifier model run the following command (make sure you're in the directory that the main files are stored):
